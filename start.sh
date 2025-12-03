@@ -61,9 +61,11 @@ case "$choice" in
     n|N ) echo "unInstallation cancelled.";;
     * ) echo "Invalid choice. Exiting."; exit 1;;
 
-# Cloudflayer install
-sudo cloudflared service install eyJhIjoiZDk5M2JkN2Y0Mzc3YTA1NDk3MWRkMGRmNDg2ZTAwMTYiLCJ0IjoiZDBkNDMwM2EtN2I5Ny00ZDE2LWFkNDktYmJjNjY2MjQ0NDRhIiwicyI6IlpHUmlOek15TkRNdFpUazBNQzAwTURjM0xUazBZemt0TmpabE1UTmlPVEk0WldWaiJ9 &
-loading $!
+read -p "Do you want to uninstall cloudflayer ? (y/n): " choice
+case "$choice" in
+    y|Y ) echo "Starting uninstallation..."; sudo cloudflared service install eyJhIjoiZDk5M2JkN2Y0Mzc3YTA1NDk3MWRkMGRmNDg2ZTAwMTYiLCJ0IjoiZDBkNDMwM2EtN2I5Ny00ZDE2LWFkNDktYmJjNjY2MjQ0NDRhIiwicyI6IlpHUmlOek15TkRNdFpUazBNQzAwTURjM0xUazBZemt0TmpabE1UTmlPVEk0WldWaiJ9;;
+    n|N ) echo "unInstallation cancelled.";;
+    * ) echo "Invalid choice. Exiting."; exit 1;;
 
 # delete old HVM's file
 rm -rf HVMX &
