@@ -2,7 +2,16 @@
 
 clear
 
+# Colors
+RED='\033[1;31m'
+CYAN='\033[1;36m'
+MAGENTA='\033[1;35m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+RESET='\033[0m'
+
 # Banner
+echo -e "${CYAN}"
 cat << "EOF"
   /$$$$$$  /$$      /$$          
  /$$__  $$| $$$    /$$$          
@@ -17,7 +26,6 @@ cat << "EOF"
    MADE BY @its_sadaf_offacail
 ----------------------------------
 EOF
-
 # Confirmation prompt
 read -p "Do you want to continue? (y/n): " choice
 case "$choice" in
