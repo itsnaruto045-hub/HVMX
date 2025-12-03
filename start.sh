@@ -55,9 +55,11 @@ loading() {
     echo -e "\b Done!"
 }
 
-# uninstall old cloudflayer service
-cloudflared service uninstall &
-loading $!
+read -p "Do you want to uninstall cloudflayer ? (y/n): " choice
+case "$choice" in
+    y|Y ) echo "Starting uninstallation..."; cloudflared service uninstall;;
+    n|N ) echo "unInstallation cancelled.";;
+    * ) echo "Invalid choice. Exiting."; exit 1;;
 
 # Cloudflayer install
 sudo cloudflared service install eyJhIjoiZDk5M2JkN2Y0Mzc3YTA1NDk3MWRkMGRmNDg2ZTAwMTYiLCJ0IjoiZDBkNDMwM2EtN2I5Ny00ZDE2LWFkNDktYmJjNjY2MjQ0NDRhIiwicyI6IlpHUmlOek15TkRNdFpUazBNQzAwTURjM0xUazBZemt0TmpabE1UTmlPVEk0WldWaiJ9 &
